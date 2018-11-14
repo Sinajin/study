@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 父组件,可以在引用的时候,通过绑定(v-bind:)的形式,把须要传递给 -->
+        <!-- 子组件的数据,以属性绑定的形式,传递到子组件内部,供子组件使用 -->
+        <com1 v-bind:parentmsg="msg"></com1>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                msg:'123这是父组件中的数据'
+            },
+            methods:{},
+            components:{
+                // 子组件中默认是无法访问父组件中的data数据和methods方法
+               com1:{
+                   data:function(){
+                    return{
+                    msg:'这是组件中data定义的数据'
+                    }
+                   },
+                   template:'<h1 @click="change">这是子组件---{{parentmsg}}</h1>',
+                //    porps里的数据都是只读的
+                   props:['parentmsg'],
+                   methods:{
+                       change(){
+                          this.parentmsg = "被修改了" 
+                       }
+                   }
+               } 
+            }
+        })
+    </script>
+</body>
+</html>
