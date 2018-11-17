@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function max(){
+        //     var max = arguments[0];
+        //     for(var i=1; i<arguments.length; i++){
+        //         if(max < arguments[i]){
+        //             max = arguments[i];
+        //         }
+        //     }
+        //     return max;
+        // }
+        // console.log(max(5,2,12,89));
+        
+        var MyMath = {
+            max : function(){
+                var max = arguments[0];
+                for(var i=1; i<arguments.length; i++){
+                    if (max < arguments[i]) {
+                    max = arguments[i];
+                    }
+                    }
+                    return max;
+                },
+            min: function () {
+                var min = arguments[0];
+                for (var i = 1; i < arguments.length; i++) {
+                if (min > arguments[i]) {
+                     min = arguments[i];
+                   }
+                 }
+                 return min;
+                }
+            };
+            console.log(MyMath.max(10, 1, 100, 23));
+        
+
+    </script>
+</body>
+</html>

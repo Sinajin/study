@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+   <script>
+     // 对象的拷贝
+     var obj1 = {
+       name: 'zs',
+       age: 18,
+       sex: '男',
+       dog: {
+         name: '金毛',
+         age: 2,
+         yellow: '黄色'
+       },
+       friends: ['lilei', 'hanmeimei']
+     }
+
+     var obj2 ={};
+
+
+    // console.log(obj2 instanceof Array);
+    // console.log(obj2 instanceof Object);
+    var arr = [];
+
+    function deepCopy(o1, o2){
+        for(var key in o1){
+            if(o1[key] instanceof Array){
+                console.log(key);
+                o2[key] = [];
+                deepCopy(o1[key],o2[key]);
+            }else if(o1[key] instanceof Object){
+                o2[key] = {};
+                deepCopy(o1[key], o2[key]);
+            }else{
+                o2[key] = o1[key];
+            }
+        }
+    }
+    deepCopy(obj1, obj2);
+    obj1.name = 'xxx';
+    obj1.dog.name = 'dahuang';
+    obj1.friends[0] = 'sssss';
+
+    console.dir(obj1);
+    console.dir(obj2);
+
+   </script>
+</body>
+</html>

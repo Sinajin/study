@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 浅拷贝
+        // var obj1 = {
+        //     name:'zs',
+        //     age:18,
+        //     sex:'男'
+        // }
+        // var obj2 = {};
+
+        // function copy(o1, o2){
+        //     for(var key in o1){
+        //         o2[key] = o1[key];
+        //     }
+        // }
+        // copy(obj1,obj2);
+        // console.dir(obj2);
+        
+        var obj1 = {
+            name:'zs',
+            age:18,
+            sex:'男',
+            dog:{
+                name:'金毛',
+                age:2,
+                color:'yellow'
+            }
+        }
+        var obj2 = {};
+
+        function copy(o1, o2){
+            for(var key in o1){
+                o2[key] = o1[key];
+            }
+        }
+        copy(obj1,obj2);
+        console.dir(obj2);
+    // 修改obj1中的成员
+    obj1.name = '>>>>';
+    obj1.dog.name = '黄狗';
+    console.dir(obj2);
+    console.dir(obj1);
+    // obj1中的name修改之后,obj2中的name并没有修改
+    // obj1中dog对象的name修改之后,obj2中的dog.name也修改,因为两个都指向同一个地址
+    // 简单数据类型和复杂数据类型
+    </script>
+</body>
+</html>
