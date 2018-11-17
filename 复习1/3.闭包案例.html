@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="heroes">
+        <li>张飞</li>
+        <li>关于</li>
+        <li>李白</li>
+        <li>胡66</li>
+    </ul>
+    <script>
+    // 方式1
+    // var heroes = document.getElementById('heroes');
+    // var list = heroes.children;
+    // for (var i=0; i<list.length; i++){
+    //     var li = list[i];
+    //     li.index = i;
+    //     li.onclick = function(){
+    //         console.log(this.index);
+    //     }
+    // }
+
+    // 方式2闭包解决
+    var heroes = document.getElementById('heroes');
+    var list = heroes.children;
+    for(var i=0; i<list.length; i++){
+        var li = list[i];
+        (function(i){
+            li.onclick = function(){
+                console.log(i);
+            }
+        })(i)
+    }
+    </script>
+</body>
+</html>

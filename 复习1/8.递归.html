@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function fn1(){
+        //     var n = 10; 
+        //     console.log(n);
+        //     fn2();
+        // }
+        // function fn2(){
+        //     var n = 20;
+        //     console.log(n);
+        // }
+        // fn1();
+        // 递归一般都要写一个结束的条件
+        // function getSum(n){
+        //     if(n===1){
+        //         return 1;
+        //     }
+        //     return n + getSum(n-1);
+        // }
+        // console.log(getSum(3));
+        //递归解决n的阶乘问题
+        // function fn(n){
+        //     if(n===1){
+        //         return 1;
+        //     }
+        //     return n * fn(n-1);
+        // }
+        // console.log(fn(5));
+
+        // 斐波那契数列
+        function fn(n){
+			if(n===1 || n===2){
+				return 1;
+			}
+			return fn(n-1) + fn(n-2);
+ 		}
+ 		console.log(fn(3));
+ 		console.log(fn(5));
+    </script>
+</body>
+</html>

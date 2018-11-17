@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var o = {};
+        for (var i=0; i<10; i++){
+            o['a'+i] = i*2;
+        }
+        // console.log(o);
+        for(var key in o){
+            console.log(key + '---' + o[key]);
+        }
+
+    // <!-- 删除属性 -->
+         var o = {
+        name:'abc',
+         say: function(){
+
+         }
+    }
+    console.log(o.name);
+    delete o.name;
+    console.log(o.name);
+    </script>
+
+
+
+   
+</body>
+</html>
