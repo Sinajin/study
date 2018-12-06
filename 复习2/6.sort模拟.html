@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+   var numbers = [213,34,54,56,77];
+  function sort(array,fnCompare){
+    for (var i=0; i<numbers.length - 1; i++){
+       var isSort = true;
+       for (var j=0; j<numbers.length - 1 - i; j++){
+           if(fnCompare(array[j],array[j+1])>0){
+               isSort = false;
+               var tmp = numbers[j];
+               numbers[j] = numbers[j+1];
+               numbers[j+1] = tmp;
+           }
+       }
+       if(isSort){
+           break;
+       }
+    }
+  }
+  sort(numbers,function(a,b){
+      return b - a;
+  })
+   console.log(numbers);
+</script>
+</html>

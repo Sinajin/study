@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var d = new Date();
+        // console.log(d);
+        // console.log(d.toString());
+        // console.log(d.toDateString());
+        // console.log(d.toTimeString());
+
+        // var d = new Date();
+        // console.log(d.getFullYear());
+        // console.log(d.getMonth());
+        // console.log(d.getDate());
+        // console.log(d.getHours());
+        // console.log(d.getMinutes());
+        // console.log(d.getSeconds());
+        // 日期案例
+
+        function formateDate(date){
+            if(!(date instanceof Date)){
+                console.error('date不是日期对象')
+                return;
+            }
+            var year = date.getFullYear(),
+            month = date.getMonth() + 1,
+            day = date.getDate(),
+            hour = date.getHours(),
+            minute = date.getMinutes(),
+            second = date.getSeconds();
+            // if(month<10){
+            //     month = '0' + month;
+            // }
+            month = month <10? '0' + month :month;
+            day = day<10? '0' + day : day;
+
+            return year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second ;
+        }
+        var d = new Date();
+       var dateStr =  formateDate(d);
+       console.log(dateStr);
+    </script>
+</body>
+</html>

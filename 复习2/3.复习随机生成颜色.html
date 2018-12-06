@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    
+    div{
+        height:300px;
+        width:500px;
+        background-color:rgb(100,100,100);
+    }
+    
+</style>
+<body>
+    <div id='rgb'></div>
+</body>
+
+<script> 
+// function random(min, max){
+//     return Math.floor(Math.random()*(max - min + 1) + min);
+// }
+// function randomRGB(min, max){
+//     var color1 = random(min, max);
+//     var color2 = random(min, max);
+//     var color3 = random(min, max);
+//     return 'rgb(' + color1 + ',' + color2 + ',' + color3 + ')';
+// }
+// var color = randomRGB(0,255);
+// // console.log(color);
+// var rgb = document.getElementById('rgb');
+// var an = document.getElementById('an');
+// rgb.style.backgroundColor = color
+
+
+function random(min , max){
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+function randomRGB(min, max){
+    var color1 = random(min, max);
+    var color2 = random(min, max);
+    var color3 = random(min, max);
+    return 'rgb(' + color1 + ',' + color2 + ',' + color3 + ')';
+}
+
+var color = randomRGB(0, 255);
+console.log(color);
+
+var n = document.getElementById('rgb');
+n.style.backgroundColor = color;
+
+</script>
+</html>

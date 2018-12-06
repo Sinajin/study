@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            background-color:red;
+            width:200px;
+            height:200px;
+        }
+        .show{
+            display:block;
+        }
+        .hidden{
+            display:none;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" id="btn" value="隐藏">
+    <br>
+    <div id="box">
+
+    </div>
+</body>
+<script>
+    var btn = document.getElementById('btn');
+    var isShow = true;
+    btn.onclick = function(){
+        var box = document.getElementById('box');
+       if(isShow){
+        box.className = 'hidden';
+        this.value ="显示";
+        isShow = false;
+       }else{
+           box.className = 'show';
+           this.value = '隐藏';
+           isShow = true;
+       }
+        
+    }
+
+</script>
+</html>

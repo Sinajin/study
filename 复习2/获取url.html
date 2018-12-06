@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+var url = 'http://www.ithsol.com/login?name=zs&age=18&a=1&b=2';
+// console.log(url.substr(2));
+// var index = url.indexOf('?')+1;
+// console.log(url.substr(index));
+// var o={};
+// function getParams(url){
+//     var index = url.indexOf('?')+1;
+//     var params = url.substr(index);
+//     // console.log(params);
+//     var arr = params.split('&');
+//     // console.log(arr);
+//     for(var i=0; i<arr.length;i++){
+//         var temArr = arr[i].split('=');
+//         var key = temArr[0];
+//         var value = temArr[1];
+//         o[key] = value;
+//     }
+//     return o;
+// }
+// var obj = getParams(url);
+// console.log(obj);
+var o={};
+function getParams(url){
+    var index = url.indexOf('?')+1;
+    var params = url.substr(index);
+    var arr = params.split('&');
+    for(var i=0; i<arr.length; i++){
+        var temArr = arr[i].split('=');
+        var key = temArr[0];
+        var value = temArr[1];
+        o[key] = value;
+    }
+    return o;
+}
+var obj = getParams(url);
+console.log(obj);
+
+</script>
+</html>
