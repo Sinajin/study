@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1.两个时间差相减 -->
+    
+</body>
+
+<script>
+    // var d1 = new Date();
+    // var d2 = new Date(2017, 9, 1);
+    // console.log(d2 - d1);
+
+
+    // 2.如何计算相差天时秒
+    function getInterval(start, end){
+        var interval = end - start;
+        var day, hour, minute, second;
+        interval /=1000;
+        day = Math.round(interval/60/60/24);
+        hour = Math.round(interval/60/60 % 24);
+        minute = interval/60 % 60;
+        second = interval %60;
+
+        return {
+            day:day,
+            hour: hour,
+            minute: minute,
+            second:second
+         }
+    }
+
+    var d1 = new Date();
+    var d2 = new Date(2017, 9, 1);
+    var shijiancha =  getInterval(d2 , d1);
+    console.log(shijiancha);
+
+</script>
+</html>

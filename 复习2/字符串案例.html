@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+var s = 'ssogabogidangkjsldk';
+var o = {};
+
+for(var i=0;i<s.length; i++){
+    var item = s.charAt(i);
+    if(o[item]){
+        o[item]++;
+    }else{
+        o[item] = 1;
+    }
+}
+// console.log(o);
+var num = 1;
+for(var key in o){
+    if(num<o[key]){
+        num = o[key];
+        ch = key;
+    }
+    // console.log(num , ch);
+}
+console.log(num , ch);
+
+
+
+</script>
+</html>
