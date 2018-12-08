@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="按钮" id='btn'>
+	<div id = 'box'>
+		
+	</div>
+</body>
+<script>
+	
+	var datas = ['jerry','tom','jenire','soj'];
+	btn = document.getElementById('btn');
+	box = document.getElementById('box');
+	btn.onclick = function(){
+		var array = [];
+		array.push('<ul>');
+		for(var i=0; i<datas.length; i++){
+			var data = datas[i];
+			array.push('<li>'+data+'</li>');
+		}
+		array.push('</ul>');
+		box.innerHTML=array.join('');
+		console.log(box.innerHTML);
+	}
+</script>
+</html>
