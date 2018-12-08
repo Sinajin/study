@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        select {
+            width:200px;
+            height: 200px;
+            background-color: #33cccc;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+  <select id="all" multiple="multiple">
+    <option>苹果</option>
+    <option>橘子</option>
+    <option>梨</option>
+    <option>西瓜</option>
+    <option>水蜜桃</option>
+  </select>
+
+  <input type="button" value=">>" id="btn1">
+  <input type="button" value="<<" id="btn2">
+  <input type="button" value=">" id="btn3">
+  <input type="button" value="<" id="btn4">
+
+  <select id="select" multiple="multiple">
+    
+  </select>
+  
+  <script src="common.js"></script>
+  <script>
+      var all = my$('all');
+      var select = my$('select');
+    var btn1 = document.getElementById('btn1');
+    btn1.onclick = function(){
+        // for(var i=0; i<all.children.length; i++){
+        //     var option = all.children[i];
+        //     select.appendChild(option);
+        //     i--;
+        // }
+       var len = all.children.length;
+       for(var i=0; i<len; i++){
+           var option = all.children[0];
+           select.appendChild(option);
+       }
+       
+    }
+
+    // 移动选中的水果
+        my$('btn3').onclick = function(){
+            var len = all.children.length;
+            for(var i=0; i<len; i++){
+                var option = all.children[i];
+                if(option.selected){
+                    select.push(option);
+                    option.selected = false;
+                }
+            }
+        }
+  </script>
+</body>
+</html>

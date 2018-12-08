@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    #box table {
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+  <script src="common.js"></script>
+  <script>
+    // var s = {name: 'zs', subject: '语文', score: 90};
+    // 模拟数据
+    var datas = [
+      {name: 'zs', subject: '语文', score: 90},
+      {name: 'ls', subject: '数学', score: 80},
+      {name: 'ww', subject: '英语', score: 99},
+      {name: 'zl', subject: '英语', score: 100},
+      {name: 'xs', subject: '英语', score: 60},
+      {name: 'dc', subject: '英语', score: 70}
+    ];
+    // 表头数据
+    var headDatas = ['姓名', '科目', '成绩', '操作'];
+    // 创建table元素
+    var table = document.createElement('table');
+    my$('box').appendChild(table);
+    table.width = '400px';
+    // 创建表头
+    var thead = document.createElement('thead');
+    table.appendChild(thead);
+  
+    var tr = document.createElement('tr');
+    thead.appendChild(tr);
+    tr.style.height = '40px';
+    tr.style.backgroundColor = 'lightgray';
+
+    // 遍历头部数据
+    for(var i= 0; i<headDatas.length; i++){
+        var th = document.createElement('th');
+        tr.appendChild(th);
+        th.innerText = headDatas[i];
+    }
+    // 创建数据行
+    var tbody = document.createElement('tbody');
+    table.appendChild(tbody);
+    tbody.style.textAlign = 'center';
+    for(var i=0; i<datas.length; i++){
+        var data = datas[i];
+        tr = document.createElement('tr');
+        tbody.appendChild(tr);
+        for(var key in data){
+            var td = document.createElement('td');
+            tr.appendChild(td);
+            td.innerText = data[key];
+        }
+        td = document.createElement('td');
+        tr.appendChild(td);
+        var  link = document.createElement('a');
+        td.appendChild(link);
+        link.href = 'javascript:;';
+        link.innerText = '删除';
+        link.onclick = function(){
+            var tr = this.parentNode.parentNode;
+            tbody.removeChild(tr);
+            return false;
+        }
+    }
+  </script>
+</body>
+</html>
+
