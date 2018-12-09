@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.onclick = function(){
+            conosole.log(document.body.scrollLeft);
+            console.log(document.body.scrollTop);
+            console.log(document.documentElement.scrollLeft);
+            console.log(document.documentElement.scrollTop);
+
+            function getScroll(){
+                var scrollLeft = document.body.scrollLeft || document.documentElement.scrollLeft;
+                var scrollTop = document.body.scrollLeft || document.documentElement.scrollTop;
+                return{
+                    scrollLeft: scrollLeft,
+                    scrollTop : scrollTop
+                }           
+            }
+        }
+    </script>
+</body>
+</html>
