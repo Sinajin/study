@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+        }
+        #box{
+            position:relative;
+            background-color:red;
+            width:100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="开始" id="btn">
+    <div id="box"></div>
+    <script>
+        var btn = document.getElementById('btn');
+        var box = document.getElementById('box');
+        btn.onclick = function(){
+            // for(var i=0; i<100; i++){
+            //     box.style.left = box.offsetLeft + 5 + 'px';
+            // }
+                var target = 600;
+                var step = 6;
+           var timerId =  setInterval(function(){
+                if(box.offsetLeft >=target){
+                    clearInterval(timerId);
+                    box.style.left = target + 'px';
+                    return;
+                }
+                box.style.left = box.offsetLeft + step + 'px';
+            },30)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    页面将在 <span id="span">3</span>秒后跳转,无法跳转请 <a href="http://www.baidu.com">点击这里</a>
+    <script>
+        var span = document.getElementById('span');
+        setTimeout(function(){
+            location.href = "http://www.baidu.com";
+        },3000);
+        setInterval(function(){
+            span.innerText = parseInt(span.innerText) - 1;
+        },1000);
+    </script>
+</body>
+</html>
