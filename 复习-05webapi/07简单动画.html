@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    #box {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+    #box2 {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background-color:blue;
+    }
+  </style>
+</head>
+<body>
+  <input type="button" id="btn1" value="动画 400">
+  <input type="button" id="btn2" value="动画 800">
+
+  <div id="box">
+    
+  </div>
+  <div id="box2">
+
+  </div>
+  <script>
+    var btn1 = document.getElementById('btn1');
+    var box = document.getElementById('box');
+    var box2 = document.getElementById('box2');
+    var btn2 = document.getElementById('btn2');
+    var timerId;
+  
+    btn1.onclick = function(){
+        animate(box,400);
+        animate(box2,400);
+    }
+    btn2.onclick = function(){
+        animate(box,800);
+        animate(box2,800);
+    }
+  
+
+//   封装函数
+    function animate(element,target){
+        if(element.timerId){
+            clearInterval(element.timerId);
+            // timerId = null;
+        }
+        element.timerId = setInterval(function(){
+            var step = 10;
+            // var target = 800;
+            var current = element.offsetLeft;
+            if(current >= target){
+                clearInterval(element.timerId);
+                element.style.left = target + 'px';
+                return;
+            }
+            current+= step;
+            element.style.left = current + 'px';
+        },30)
+    } 
+
+  </script>
+</body>
+</html>
