@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Student(){
+            // this.name = name;
+            // this.age = age;
+            // this.sex = sex;
+        }
+        Student.prototype.sayHi = function(){
+            console.log('大家好,我是' + this.name);
+            console.log('hhh');
+        }
+
+        var s1  = new Student();
+        s1.sayHi();
+        // var s2 = new Student('hmm', 18, '女');
+        // console.log(s1.sayHi());
+
+        // console.dir(s1);
+        // // console.dir(s1.__proto__);
+        // console.dir(Student);
+        // // console.dir(Student.prototype);
+        // console.log(s1.constructor);
+
+        // prototype的设置方法
+        // 改变构造函数的prototype的时候,须要重新设置constructor属性
+        // student.prototype = {
+                // constructor:Student,
+        //     sayHi:function(){
+        //         console.log();
+        //     },
+        //     eat:function(){
+        //         console.log()
+        //     }
+
+        // }
+    </script>
+</body>
+</html>
