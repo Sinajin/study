@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function clear(array){
+        var o={};
+        for(var i=0; i<array.length; i++){
+            var item = array[i];
+            if(o[item]){
+                o[item]++;
+            }else{
+                o[item]=1;
+            }
+        }
+        console.log(o);
+        var newArray = [];
+        for(var key in o){
+            if(o[key]===1){
+                newArray.push(key);
+            }else{
+                if(newArray[key]===-1){
+                    newArray.push(key);
+                }
+            }
+          
+        }
+        return newArray;
+    }
+   
+
+    var array = ['a', 'b', 'c', 'd', 'a', 'b'];
+    var newArra = clear(array);
+    console.log(newArra);
+    
+
+   
+    
+</script>
+</html>

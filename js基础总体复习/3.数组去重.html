@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // join 方法
+    // var arr = ['zs', 'ls', 'wa', 'zj'];
+    // console.log(arr.join(''));
+
+    // 数组反转
+    // var arr = ['zs', 'ls', 'wa', 'zj'];
+    // arr.reverse();
+    // console.log(arr);
+
+    // 数组过滤
+    // var arr = [1500,1200,2000,2100,2340];
+    // var newArray = arr.filter(function(item){
+    //     return item < 2000;;
+    // })
+    // console.log(newArray);
+
+     var arr = ['c','a','z','a','x','a'];
+     var index = -1;
+     do{
+         index = arr.indexOf('a',index+1);
+         if(index !== -1){
+             console.log(index);
+         }
+     }while(index!== -1);
+</script>
+</html>

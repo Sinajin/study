@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{
+            width:600px;
+            cursor:pointer;
+        }
+        table td{
+            text-align:center;
+        }
+        table th{
+		background-color:skyblue;
+	    }
+	    table tr{
+		    background-color:pink;
+	    }
+    </style>
+</head>
+<body>
+    <div id="dv">
+            请输入姓名:<input type="text" value = ""><br>
+            请输入邮箱:<input type="text" value = ""><br>
+            请输入手机:<input type="text" value = ""><br>
+            请输入地址:<input type="text" value = ""><br>
+    </div>
+    <input type="button" value="添加" id="btn">
+    <table border="1" cellpadding="0" cellspacing = "0" id='tb'>
+        <thead>
+            <tr>
+                 <th>姓名</th>
+                 <th>邮箱</th>
+                 <th>手机</th>
+                 <th>地址</th>
+            </tr>
+        </thead>
+        <tbody id="tbd">
+            <tr>
+                <td>小黑</td>
+                <td>xiaohei@126.com</td>
+                <td>19889898989</td>
+                <td>北京</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function my$(id){
+            return document.getElementById(id);
+        }
+        var txts = my$('dv').getElementsByTagName('input');
+        my$('btn').onclick = function(){
+            var flag = true;
+            for(var i=0; i<txts.length; i++){
+                if(txts[i].value===''){
+                    flag = false;
+                    break;
+                }
+                // console.log(11);
+            }
+            // 注意这里的括号范围
+               if(flag){
+                var trObj = document.createElement('tr');
+                my$('tbd').appendChild(trObj);
+                for(var i=0; i<txts.length; i++){
+                    var tdObj = document.createElement('td');
+                    trObj.appendChild(tdObj);
+                    tdObj.innerText = txts[i].value;
+                }
+               }else{
+                   alert('请输入完整数据');
+               }
+               var trObjs = my$('tbd').getElementsByTagName('tr');
+               for(var i=0; i<trObjs.length; i++){
+                   trObjs[i].style.backgroundColor= i % 2 ===0? 'red':'yellow';
+               }
+
+        }
+    </script>
+</body>
+</html>
